@@ -1,5 +1,5 @@
 const express = require('express')
-// const routes = require('./routes')
+const routes = require('./routes')
 const db = require('./db')
 const bodyParser = require('body-parser')
 
@@ -15,7 +15,7 @@ app.use(logger('dev'))
 
 // app.use() middleware here ^ ///////////////////
 
-// app.use('/api', routes)
+app.use('/api', routes)
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
