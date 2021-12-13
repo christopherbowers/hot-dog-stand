@@ -1,6 +1,5 @@
-
-const { Schema } = require('mongoose')
-// const Inventory = require('./inventory')
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const Main = new Schema(
   {
@@ -11,4 +10,4 @@ const Main = new Schema(
   { timestamps: true },
 )
 
-module.exports = Main
+module.exports = mongoose.model('mains', Main)
