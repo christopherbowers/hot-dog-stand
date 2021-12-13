@@ -1,0 +1,30 @@
+{
+  "name": "hot-dog-stand",
+  "version": "1.0.0",
+  "description": "Full Stackathon Hot Dog Stand",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christopherbowers/hot-dog-stand.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christopherbowers/hot-dog-stand/issues"
+  },
+  "homepage": "https://github.com/christopherbowers/hot-dog-stand#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^6.1.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15"
+  }
+}
