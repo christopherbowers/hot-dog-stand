@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function About() {
     return (
-        <div>
+        <div className="john-wall">
             <h1>About the Developers</h1>
             <br/>
             <h2>Christopher: Christopher is a photographer. With previous experience it HTML, Christopher hopes to broaden his horizons by taking the General Assembly Immersive.</h2>
