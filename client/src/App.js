@@ -56,7 +56,17 @@ const App = () => {
               />
             )}
           />
-          <Route path="/game/open-shop" component={OpenShop} />
+          <Route
+            path="/game/open-shop"
+            component={(props) => (
+              <OpenShop
+                {...props}
+                mains={mains}
+                sides={sides}
+                drinks={drinks}
+              />
+            )}
+          />
         </Switch>
       </main>
     </div>
