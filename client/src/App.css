@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+.inventory-container {
+  display: flex;
+  justify-content: center;
+}
+.menu-card {
+  border: 1px solid black;
+}
+.menu-card > h4{
+  padding: 5px;
+  color: black;
+  font-weight: 900;
+}
+/*.menu-card > p{
+  padding: 5px;
+  color: red;
+}*/
+.price{
+  color: green;
+  font-weight: 600;
+}
+.john-wall{
+  margin: 0 auto;
+  text-align: center;/*fix this*/
+  padding: 100px;
+}
