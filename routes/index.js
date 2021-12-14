@@ -11,9 +11,9 @@ router.get('/sides', controllers.getAllSides)
 router.get('/drinks', controllers.getAllDrinks)
 
 
-router.put('/mains/:name', controllers.updateMains)
-router.put('/sides/:name', controllers.updateSides)
-router.put('/drinks/:name', controllers.updateDrinks)
+router.put('/mains/:id', controllers.updateMains)
+router.put('/sides/:id', controllers.updateSides)
+router.put('/drinks/:id', controllers.updateDrinks)
 
 
 
