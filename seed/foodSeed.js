@@ -74,7 +74,15 @@ await Drink.insertMany(drinks)
   console.log('Created drinks!')
 }
 
+const dropDbs = async () => {
+  await Main.collection.drop()
+  await Side.collection.drop()
+  await Drink.collection.drop()
+  console.log('Dropped DBs')
+}
+
 const run = async () => {
+  await dropDbs()
   await insertMains()
   await insertSides()
   await insertDrinks()
@@ -83,3 +91,5 @@ const run = async () => {
 
 
 run()
+
+
