@@ -1,10 +1,13 @@
 import React from "react";
-import CheckInventory from "../gameplay/CheckInventory";
+import { NavLink } from 'react-router-dom';
 
 const Game = () => {
+
+
+
   return (
     <div>
-      <CheckInventory />
+      <NavLink to="/game/check-inventory">Check Inventory</NavLink>
     </div>
   )
 }
