@@ -44,7 +44,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route exact path="/game" component={Game} />
           {/* <Route path="/instructions" component={Instructions} /> */}
-          {/* <Route path="/about" component={About} /> */}
+          <Route path="/about" component={About} />
           <Route
             path="/game/check-inventory"
             component={(props) => (
