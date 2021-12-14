@@ -1,6 +1,5 @@
-const Main = require('../models/main')
-const Side = require('../models/side')
-const Drink = require('../models/drink')
+const {Main, Side, Drink } = require('../models/')
+
 
 /* GET 
 --------------------------------------------*/
