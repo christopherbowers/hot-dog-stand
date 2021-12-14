@@ -7,7 +7,6 @@ import Header from './components/Header';
 import Game from './pages/Game';
 // import Instructions from './pages/Instructions';
 import About from './pages/About';
-
 import CheckInventory from './gameplay/CheckInventory';
 import OpenShop from './gameplay/OpenShop';
 
@@ -57,7 +56,17 @@ const App = () => {
               />
             )}
           />
-          <Route path="/game/open-shop" component={OpenShop} />
+          <Route
+            path="/game/open-shop"
+            component={(props) => (
+              <OpenShop
+                {...props}
+                mains={mains}
+                sides={sides}
+                drinks={drinks}
+              />
+            )}
+          />
         </Switch>
       </main>
     </div>

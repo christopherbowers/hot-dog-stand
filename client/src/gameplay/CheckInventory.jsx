@@ -1,9 +1,11 @@
+import GameNav from "../components/GameNav";
 import MenuCard from "../components/MenuCard";
 
 const CheckInventory = (props) => {
 
   return (
     <div>
+      <GameNav />
       <h2>Check Inventory</h2>
       <section className="inventory-container">
         <section className="inventory-items">
