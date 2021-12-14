@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Game from './pages/Game';
 // import Instructions from './pages/Instructions';
 import About from './pages/About';
+
 import CheckInventory from './gameplay/CheckInventory';
 import OpenShop from './gameplay/OpenShop';
 

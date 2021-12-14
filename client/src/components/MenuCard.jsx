@@ -1,6 +1,4 @@
-import React from 'react';
-
-const MainCard = (props) => {
+const MenuCard = (props) => {
 
   return (
     <div className="menu-card">
@@ -11,4 +9,4 @@ const MainCard = (props) => {
   )
 }
 
-export default MainCard
+export default MenuCard
