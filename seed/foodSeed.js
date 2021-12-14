@@ -8,18 +8,21 @@ const insertMains = async () => {
   const mains = [
     {
       name: 'Hamburger',
-      quantity: '0' ,
-      price: '0'
+      quantity: '0',
+      price: '0',
+      cost: '0'
     },
     {
       name: 'Hot Dog',
-      quantity: '0' ,
-      price: '0'
+      quantity: '0',
+      price: '0',
+      cost: '0'
     },
     {
       name: 'Buffalo Wings',
-      quantity: '0' ,
-      price: '0'
+      quantity: '0',
+      price: '0',
+      cost: '0'
     }
   ]
 
@@ -32,18 +35,22 @@ const insertSides = async () => {
   const sides = [
     {
       name: 'French Fries',
-      quantity: '0' ,
-      price: '0'
+      quantity: '0',
+      price: '0',
+      cost: '0'
+      
     },
     {
       name: 'Chips',
-      quantity: '0' ,
-      price: '0'
+      quantity: '0',
+      price: '0',
+      cost: '0'
     },
     {
       name: 'Mac and Cheese',
-      quantity: '0' ,
-      price: '0'
+      quantity: '0',
+      price: '0',
+      cost: '0'
     }
   ]
 
@@ -55,18 +62,21 @@ const insertDrinks = async () => {
   const drinks = [
     {
       name: 'Pink Lemonade',
-      quantity: '0' ,
-      price: '0'
+      quantity: '0',
+      price: '0',
+      cost: '0'
     },
     {
       name: 'Cola',
-      quantity: '0' ,
-      price: '0'
+      quantity: '0',
+      price: '0',
+      cost: '0'
     },
     {
       name: 'Root Beer',
-      quantity: '0' ,
-      price: '0'
+      quantity: '0',
+      price: '0',
+      cost: '0'
     }
   ]
 
