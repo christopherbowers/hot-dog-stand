@@ -10,13 +10,13 @@ import About from './pages/About';
 const App = () => {
   return (
     <div className="App">
-      <Nav />
+      {/* <Nav /> */}
       <main>
         <Switch>
-          <Route exact path="/" component={Home} />
+          {/* <Route exact path="/" component={Home} /> */}
           <Route path="/game" component={Game} />
-          <Route path="/instructions" component={Instructions} />
-          <Route path="/about" component={About} />
+          {/* <Route path="/instructions" component={Instructions} /> */}
+          {/* <Route path="/about" component={About} /> */}
         </Switch>
       </main>
     </div>
