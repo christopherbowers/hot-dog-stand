@@ -48,8 +48,8 @@ const getAllDrinks = async (req, res) => {
 
 const updateMains = async (req, res) => {
   try {
-    const { name } = req.params;
-    await Main.findOneAndUpdate(name, req.body, (err, main) => {
+    const { id } = req.params;
+    await Main.findByIdAndUpdate(id, req.body, (err, main) => {
       if (err) {
         res.status(500).send(err);
       }
@@ -66,8 +66,8 @@ const updateMains = async (req, res) => {
 
 const updateSides = async (req, res) => {
   try {
-    const { name } = req.params;
-    await Side.findOneAndUpdate(name, req.body, (err, side) => {
+    const { id } = req.params;
+    await Side.findOneAndUpdate(id, req.body, (err, side) => {
       if (err) {
         res.status(500).send(err);
       }
@@ -84,8 +84,8 @@ const updateSides = async (req, res) => {
 
 const updateDrinks = async (req, res) => {
   try {
-    const { name } = req.params;
-    await Drink.findOneAndUpdate(name, req.body, (err, drink) => {
+    const { id } = req.params;
+    await Drink.findOneAndUpdate(id, req.body, (err, drink) => {
       if (err) {
         res.status(500).send(err);
       }
