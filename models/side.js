@@ -10,4 +10,4 @@ const Side = new Schema(
   { timestamps: true },
 )
 
-module.exports = mongoose.model('sides', Side)
+module.exports = Side

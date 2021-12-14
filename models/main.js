@@ -10,4 +10,4 @@ const Main = new Schema(
   { timestamps: true },
 )
 
-module.exports = mongoose.model('mains', Main)
+module.exports = Main

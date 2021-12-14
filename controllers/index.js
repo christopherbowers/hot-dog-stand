@@ -1,6 +1,5 @@
-const Main = require('../models/main')
-const Side = require('../models/side')
-const Drink = require('../models/drink')
+const {Main, Side, Drink } = require('../models')
+
 
 /* GET 
 --------------------------------------------*/
@@ -27,7 +26,7 @@ const getAllSides = async (req, res) => {
 
 const getAllDrinks = async (req, res) => {
   try {
-    const drinks = await Side.find()
+    const drinks = await Drink.find()
     return res.status(200).json({ drinks })
   } 
   catch (error) {
