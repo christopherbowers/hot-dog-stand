@@ -1,7 +1,4 @@
-import React from "react";
-import MainCard from "../components/MainCard";
-import SideCard from "../components/SideCard";
-import DrinkCard from "../components/DrinkCard";
+import MenuCard from "../components/MenuCard";
 
 const CheckInventory = (props) => {
 
@@ -13,7 +10,7 @@ const CheckInventory = (props) => {
           <h3>Mains</h3>
           {
             props.mains.map((main) => (
-              <MainCard 
+              <MenuCard 
                 key={main._id}
                 name={main.name}
                 quantity={main.quantity}
@@ -25,7 +22,7 @@ const CheckInventory = (props) => {
         <section className="inventory-items">
           <h3>Sides</h3>
           {props.sides.map((side) => (
-            <SideCard 
+            <MenuCard 
               key={ side._id }
               name={ side.name }
               quantity={ side.quantity }
@@ -36,7 +33,7 @@ const CheckInventory = (props) => {
         <section className="inventory-items">
           <h3>Drinks</h3>
           {props.drinks.map((drink) => (
-            <DrinkCard 
+            <MenuCard 
               key={ drink._id }
               name={ drink.name }
               quantity={ drink.quantity }
