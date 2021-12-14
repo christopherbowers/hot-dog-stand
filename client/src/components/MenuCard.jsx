@@ -4,7 +4,7 @@ const MenuCard = (props) => {
     <div className="menu-card">
         <h4>{props.name}</h4>
         <p>Quantity: {props.quantity}</p>
-        <p>Price: ${props.price}</p>
+        <p class="price">Price: ${props.price}</p>
     </div>
   )
 }
