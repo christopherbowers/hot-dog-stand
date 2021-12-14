@@ -23,7 +23,7 @@ const CheckInventory = (props) => {
           <h3>Sides</h3>
           {
             props.sides.map((side) => (
-              <MainCard 
+              <MenuCard 
                 key={ side._id }
                 name={ side.name }
                 quantity={ side.quantity }
