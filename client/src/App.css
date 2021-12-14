@@ -61,3 +61,17 @@
   text-align: center;/*fix this*/
   padding: 100px;
 }
+.sid-wall{
+  margin: 0 auto;
+  text-align: center;
+  padding: 100px;
+}
+a:hover{
+  background-color: lightblue;
+}
+.menu-card:hover{
+  background-color: lightyellow;
+}
+a{
+  text-decoration: none;
+}
