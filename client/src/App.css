@@ -75,3 +75,17 @@ a:hover{
 a{
   text-decoration: none;
 }
+.bradley-fake-stats-beal{
+  display: flex;
+  width: 300px;
+  max-width: 45vw;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.bradley-fake-stats-meal{
+  display: flex;
+  width: 400px;
+  max-width: 55vw;
+  margin: 0 auto;
+  justify-content: space-between;
+}
