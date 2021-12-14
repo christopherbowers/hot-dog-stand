@@ -24,14 +24,16 @@ const CheckInventory = (props) => {
         </section>
         <section className="inventory-items">
           <h3>Sides</h3>
-          {props.sides.map((side) => (
-            <SideCard 
+          {
+          props.sides.map((side) => (
+            <MainCard 
               key={ side._id }
               name={ side.name }
               quantity={ side.quantity }
               price={ side.price }
             />
-          ))}
+          ))
+          }
         </section>
         <section className="inventory-items">
           <h3>Drinks</h3>

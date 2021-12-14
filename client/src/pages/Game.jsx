@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from 'react-router-dom';
+import GameNav from "../components/GameNav";
 
 const Game = () => {
 
@@ -7,7 +7,7 @@ const Game = () => {
 
   return (
     <div>
-      <NavLink to="/game/check-inventory">Check Inventory</NavLink>
+      <GameNav />
     </div>
   )
 }
