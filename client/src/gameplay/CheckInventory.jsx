@@ -14,6 +14,7 @@ const CheckInventory = (props) => {
             props.mains.map((main) => (
               <MenuCard 
                 key={main._id}
+                id={main._id}
                 name={main.name}
                 quantity={main.quantity}
                 price={main.price}
