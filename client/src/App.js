@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Header from './components/Header';
 import Game from './pages/Game';
-// import Instructions from './pages/Instructions';
+import Instructions from './pages/Instructions';
 import About from './pages/About';
 import CheckInventory from './gameplay/CheckInventory';
 import OpenShop from './gameplay/OpenShop';
@@ -43,7 +43,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/game" component={Game} />
-          {/* <Route path="/instructions" component={Instructions} /> */}
+          <Route path="/instructions" component={Instructions} />
           <Route path="/about" component={About} />
           <Route
             path="/game/check-inventory"
