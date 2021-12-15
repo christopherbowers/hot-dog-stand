@@ -10,10 +10,12 @@ const CheckInventory = (props) => {
       <section className="inventory-container">
         <section className="inventory-items">
           <h3>Mains</h3>
-          {
+          { 
+          // props.mains.length && 
             props.mains.map((main) => (
               <MenuCard 
                 key={main._id}
+                id={main._id}
                 name={main.name}
                 quantity={main.quantity}
                 price={main.price}
@@ -23,7 +25,7 @@ const CheckInventory = (props) => {
         </section>
         <section className="inventory-items">
           <h3>Sides</h3>
-          {
+          { props.sides.length &&
             props.sides.map((side) => (
               <MenuCard 
                 key={ side._id }
@@ -36,7 +38,8 @@ const CheckInventory = (props) => {
         </section>
         <section className="inventory-items">
           <h3>Drinks</h3>
-          {props.drinks.map((drink) => (
+          { props.drinks.length &&
+            props.drinks.map((drink) => (
             <MenuCard 
               key={ drink._id }
               name={ drink.name }

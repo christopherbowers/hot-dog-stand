@@ -211,7 +211,7 @@ const OpenShop = (props) => {
         </div>
       </section>
       <section className="drinks-container">
-        <h3>Sides</h3>
+        <h3>Drinks</h3>
         <div className="results-item">
           <h4>{ lemonade.name }</h4>
           <h5>Items Sold:</h5>

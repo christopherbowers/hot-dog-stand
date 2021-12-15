@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect, useHistory } from 'react-router-dom';
 import Home from './pages/Home';
 import Header from './components/Header';
 import Game from './pages/Game';
@@ -20,6 +20,8 @@ const App = () => {
     quantity: null
   });
   // const [inputQuantity, setInputQuantity] = useState('');
+
+  let history = useHistory();
 
   const getMains = async () => {
     const res = await axios.get('http://localhost:3001/api/mains');
@@ -43,27 +45,75 @@ const App = () => {
   }, []);
 
   const handleChange = (e) => {
-    // setInputPrice(e.target.value);
-    // console.log(e.target.value.name);
     setInputValue({ ...inputValue, [e.target.name]: e.target.value });
   };
 
-  function updatePrice() {
-    axios
-      .put(`http://localhost:3001/api/mains/61b957511a4e20752591c077`, {
+  const updateBurgers = async (e) => {
+    e.preventDefault();
+    await axios
+      .put(`http://localhost:3001/api/mains/${mains[0]._id}`, {
         price: inputValue.price,
         quantity: parseInt(inputValue.quantity) + mains[0].quantity
       })
       .then((response) => {
+        setMains(response.data.price);
+        setMains(response.data.quantity);
+        // return <Redirect to="/game/check-inventory" />;
+        history.push('/game/check-inventory');
+      });
+  };
+
+  const updateHotDogs = (e) => {
+    e.preventDefault();
+    axios
+      .put(`http://localhost:3001/api/mains/${mains[1]._id}`, {
+        price: inputValue.price,
+        quantity: parseInt(inputValue.quantity) + mains[1].quantity
+      })
+      .then((response) => {
+        setMains(response.data.price);
         setMains(response.data.quantity);
       });
-  }
-
-  const addInventory = (e) => {
-    e.preventDefault();
-    console.log(inputValue);
-    updatePrice();
   };
+
+  const updateWings = (e) => {
+    e.preventDefault();
+    axios
+      .put(`http://localhost:3001/api/mains/${mains[2]._id}`, {
+        price: inputValue.price,
+        quantity: parseInt(inputValue.quantity) + mains[2].quantity
+      })
+      .then((response) => {
+        setMains(response.data.price);
+        setMains(response.data.quantity);
+      });
+  };
+
+  // const updateFries = (e) => {
+  //   e.preventDefault();
+  //   axios
+  //     .put(`http://localhost:3001/api/sides/${sides[0]._id}`, {
+  //       price: inputValue.price,
+  //       quantity: parseInt(inputValue.quantity) + sides[0].quantity
+  //     })
+  //     .then((response) => {
+  //       setSides(response.data.price);
+  //       setSides(response.data.quantity);
+  //     });
+  // };
+
+  // const updateChips = (e) => {
+  //   e.preventDefault();
+  //   axios
+  //     .put(`http://localhost:3001/api/sides/${sides[1]._id}`, {
+  //       price: inputValue.price,
+  //       quantity: parseInt(inputValue.quantity) + sides[1].quantity
+  //     })
+  //     .then((response) => {
+  //       setSides(response.data.price);
+  //       setSides(response.data.quantity);
+  //     });
+  // };
 
   return (
     <div className="App">
@@ -76,14 +126,16 @@ const App = () => {
           <Route path="/about" component={About} />
           <Route
             path="/game/check-inventory"
-            component={(props) => (
-              <CheckInventory
-                {...props}
-                mains={mains}
-                sides={sides}
-                drinks={drinks}
-              />
-            )}
+            component={(props) =>
+              mains && (
+                <CheckInventory
+                  {...props}
+                  mains={mains}
+                  sides={sides}
+                  drinks={drinks}
+                />
+              )
+            }
           />
           <Route
             path="/game/set-inventory"
@@ -95,7 +147,11 @@ const App = () => {
                 drinks={drinks}
                 onChange={handleChange}
                 inputValue={inputValue}
-                onSubmit={addInventory}
+                updateBurgers={updateBurgers}
+                updateHotDogs={updateHotDogs}
+                updateWings={updateWings}
+                // updateFries={updateFries}
+                // updateChips={updateChips}
               />
             )}
           />
