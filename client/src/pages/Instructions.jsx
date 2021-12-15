@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const Instructions = () => {
   return (
     <div>
@@ -7,6 +9,7 @@ const Instructions = () => {
       <h3>How to Play</h3>
       <p>First, check your inventory of menu items. Click on each item to buy more inventory and set the price of each item. You can only make money by selling your inventory and you can only buy more inventory with your money. Keep in mind that the customers at this park don’t like to be gouged with high prices. So set your inventory and prices wisely.</p>
       <p>Once you are satisfied with your inventory and prices, open shop. See how your sales went for the day and adjust your inventory and prices for the next day accordingly. Repeat this process for each day of the week. Once the week is over, enjoy the profits!</p>
+      <Link to="/game">Start Cooking</Link>
     </div>
     )
 }
