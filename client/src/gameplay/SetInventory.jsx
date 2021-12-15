@@ -10,7 +10,9 @@ const SetInventory = (props) => {
       <section className="inventory-container">
         <section className="inventory-items">
           <form onSubmit={ props.onSubmit }>
-            <input type="number" min="0" onChange={ props.onChange } value={ props.value } placeholder="Add Inventory"/>
+            <input type="number" min="0" onChange={ props.onChange } value={ props.inputQuantity } placeholder="Add Inventory" name="quantity" />
+            <button type="submit">Order Inventory</button>
+            <input type="number" min="0" onChange={ props.onChange } value={ props.inputPrice } placeholder="Add Inventory" name="price"/>
             <button type="submit">Order Inventory</button>
           </form>
         </section>

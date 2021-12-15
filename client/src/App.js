@@ -15,7 +15,11 @@ const App = () => {
   const [mains, setMains] = useState([]);
   const [sides, setSides] = useState([]);
   const [drinks, setDrinks] = useState([]);
-  const [inputPrice, setInputPrice] = useState('');
+  const [inputValue, setInputValue] = useState({
+    price: '',
+    quantity: null
+  });
+  // const [inputQuantity, setInputQuantity] = useState('');
 
   const getMains = async () => {
     const res = await axios.get('http://localhost:3001/api/mains');
@@ -39,14 +43,16 @@ const App = () => {
   }, []);
 
   const handleChange = (e) => {
-    setInputPrice(e.target.value);
+    // setInputPrice(e.target.value);
+    // console.log(e.target.value.name);
+    setInputValue({ ...inputValue, [e.target.name]: e.target.value });
   };
 
   function updatePrice() {
     axios
-      .put(`http://localhost:3001/api/mains/61b8f9dcf4cd00793d3d51c7`, {
-        price: inputPrice,
-        quantity: '105'
+      .put(`http://localhost:3001/api/mains/61b957511a4e20752591c077`, {
+        price: inputValue.price,
+        quantity: parseInt(inputValue.quantity) + mains[0].quantity
       })
       .then((response) => {
         setMains(response.data.quantity);
@@ -55,7 +61,7 @@ const App = () => {
 
   const addInventory = (e) => {
     e.preventDefault();
-    console.log(inputPrice);
+    console.log(inputValue);
     updatePrice();
   };
 
@@ -88,7 +94,7 @@ const App = () => {
                 sides={sides}
                 drinks={drinks}
                 onChange={handleChange}
-                value={inputPrice}
+                inputValue={inputValue}
                 onSubmit={addInventory}
               />
             )}
