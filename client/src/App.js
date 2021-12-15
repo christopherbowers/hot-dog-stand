@@ -15,7 +15,7 @@ const App = () => {
   const [mains, setMains] = useState([]);
   const [sides, setSides] = useState([]);
   const [drinks, setDrinks] = useState([]);
-  const [inputDisplay, setInputDisplay] = useState('')
+  const [inputPrice, setInputPrice] = useState('');
 
   const getMains = async () => {
     const res = await axios.get('http://localhost:3001/api/mains');
@@ -39,10 +39,25 @@ const App = () => {
   }, []);
 
   const handleChange = (e) => {
-//     e.preventDefault()
-    setInputDisplay(e.target.value)
-    console.log(e.target.value)
+    setInputPrice(e.target.value);
+  };
+
+  function updatePrice() {
+    axios
+      .put(`http://localhost:3001/api/mains/61b8f9dcf4cd00793d3d51c7`, {
+        price: inputPrice,
+        quantity: '105'
+      })
+      .then((response) => {
+        setMains(response.data.quantity);
+      });
   }
+
+  const addInventory = (e) => {
+    e.preventDefault();
+    console.log(inputPrice);
+    updatePrice();
+  };
 
   return (
     <div className="App">
@@ -66,14 +81,15 @@ const App = () => {
           />
           <Route
             path="/game/set-inventory"
-            component={(props) => (
+            render={(props) => (
               <SetInventory
                 {...props}
-                mains={ mains }
-                sides={ sides }
-                drinks={ drinks }
-                handleChange={ handleChange }
-                inputDisplay={ inputDisplay }
+                mains={mains}
+                sides={sides}
+                drinks={drinks}
+                onChange={handleChange}
+                value={inputPrice}
+                onSubmit={addInventory}
               />
             )}
           />
