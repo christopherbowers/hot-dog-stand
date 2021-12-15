@@ -8,12 +8,14 @@ import Game from './pages/Game';
 // import Instructions from './pages/Instructions';
 import About from './pages/About';
 import CheckInventory from './gameplay/CheckInventory';
+import SetInventory from './gameplay/SetInventory';
 import OpenShop from './gameplay/OpenShop';
 
 const App = () => {
   const [mains, setMains] = useState([]);
   const [sides, setSides] = useState([]);
   const [drinks, setDrinks] = useState([]);
+  const [inputDisplay, setInputDisplay] = useState('')
 
   const getMains = async () => {
     const res = await axios.get('http://localhost:3001/api/mains');
@@ -36,6 +38,12 @@ const App = () => {
     getDrinks();
   }, []);
 
+  const handleChange = (e) => {
+//     e.preventDefault()
+    setInputDisplay(e.target.value)
+    console.log(e.target.value)
+  }
+
   return (
     <div className="App">
       <Header />
@@ -53,6 +61,19 @@ const App = () => {
                 mains={mains}
                 sides={sides}
                 drinks={drinks}
+              />
+            )}
+          />
+          <Route
+            path="/game/set-inventory"
+            component={(props) => (
+              <SetInventory
+                {...props}
+                mains={ mains }
+                sides={ sides }
+                drinks={ drinks }
+                handleChange={ handleChange }
+                inputDisplay={ inputDisplay }
               />
             )}
           />
