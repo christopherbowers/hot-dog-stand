@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect, useHistory } from 'react-router-dom';
 import Home from './pages/Home';
 import Header from './components/Header';
 import Game from './pages/Game';
@@ -20,6 +20,8 @@ const App = () => {
     quantity: null
   });
   // const [inputQuantity, setInputQuantity] = useState('');
+
+  let history = useHistory();
 
   const getMains = async () => {
     const res = await axios.get('http://localhost:3001/api/mains');
@@ -46,9 +48,9 @@ const App = () => {
     setInputValue({ ...inputValue, [e.target.name]: e.target.value });
   };
 
-  const updateBurgers = (e) => {
+  const updateBurgers = async (e) => {
     e.preventDefault();
-    axios
+    await axios
       .put(`http://localhost:3001/api/mains/${mains[0]._id}`, {
         price: inputValue.price,
         quantity: parseInt(inputValue.quantity) + mains[0].quantity
@@ -56,6 +58,8 @@ const App = () => {
       .then((response) => {
         setMains(response.data.price);
         setMains(response.data.quantity);
+        // return <Redirect to="/game/check-inventory" />;
+        history.push('/game/check-inventory');
       });
   };
 
@@ -122,14 +126,16 @@ const App = () => {
           <Route path="/about" component={About} />
           <Route
             path="/game/check-inventory"
-            component={(props) => (
-              <CheckInventory
-                {...props}
-                mains={mains}
-                sides={sides}
-                drinks={drinks}
-              />
-            )}
+            component={(props) =>
+              mains && (
+                <CheckInventory
+                  {...props}
+                  mains={mains}
+                  sides={sides}
+                  drinks={drinks}
+                />
+              )
+            }
           />
           <Route
             path="/game/set-inventory"
