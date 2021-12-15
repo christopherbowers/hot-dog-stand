@@ -65,6 +65,7 @@
   margin: 0 auto;
   text-align: center;
   padding: 100px;
+  justify-content: space-between;
 }
 a:hover{
   background-color: lightblue;
@@ -83,6 +84,13 @@ a{
   justify-content: space-between;
 }
 .bradley-fake-stats-meal{
+  display: flex;
+  width: 400px;
+  max-width: 55vw;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.bradley-fake-stats-deal{
   display: flex;
   width: 400px;
   max-width: 55vw;
