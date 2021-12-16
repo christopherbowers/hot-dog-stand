@@ -1,4 +1,4 @@
-const {Main, Side, Drink } = require('../models')
+const { Main, Side, Drink } = require('../models')
 
 
 /* GET 
@@ -36,15 +36,6 @@ const getAllDrinks = async (req, res) => {
 
 /* PUT 
 --------------------------------------------*/
-
-//TODO: convert params to lowercase
-
-// app.get('/fruits/:name', (req, res) => {
-//   let lowerCaseFruit = (req.params.name).toLowerCase()
-//   const fruit = fruits.find( ({ name }) => name.toLowerCase() === lowerCaseFruit )
-//   res.send(fruit.name)
-// })
-
 
 const updateMains = async (req, res) => {
   try {
