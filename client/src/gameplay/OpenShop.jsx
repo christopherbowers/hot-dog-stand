@@ -11,12 +11,12 @@ const OpenShop = (props) => {
     burgerCustomers = 1
   } else if (burgerMargin <= 2) {
     burgerCustomers = 0.75
-  } else if (burgerMargin <= 3) {
-    burgerCustomers = 0.5
   } else if (burgerMargin <= 4) {
+    burgerCustomers = 0.5
+  } else if (burgerMargin <= 6) {
     burgerCustomers = 0.25
   } else {
-    burgerCustomers = 0.1
+    burgerCustomers = 0
   }
   const burgersSold = parseInt(Math.floor(Math.random() * initialBurgerCount * burgerCustomers));
 
@@ -28,12 +28,12 @@ const OpenShop = (props) => {
     hotDogCustomers = 1
   } else if (hotDogMargin <= 2) {
     hotDogCustomers = 0.75
-  } else if (hotDogMargin <= 3) {
-    hotDogCustomers = 0.5
   } else if (hotDogMargin <= 4) {
+    hotDogCustomers = 0.5
+  } else if (hotDogMargin <= 5) {
     hotDogCustomers = 0.25
   } else {
-    hotDogCustomers = 0.1
+    hotDogCustomers = 0
   }
   const hotDogsSold = Math.floor(Math.random() * initialHotDogCount * hotDogCustomers);
 
@@ -45,12 +45,12 @@ const OpenShop = (props) => {
     wingsCustomers = 1
   } else if (wingsMargin <= 2) {
     wingsCustomers = 0.75
-  } else if (wingsMargin <= 3) {
-    wingsCustomers = 0.5
   } else if (wingsMargin <= 4) {
+    wingsCustomers = 0.5
+  } else if (wingsMargin <= 6) {
     wingsCustomers = 0.25
   } else {
-    wingsCustomers = 0.1
+    wingsCustomers = 0
   }
   const wingsSold = Math.floor(Math.random() * initialWingsCount * wingsCustomers);
 
