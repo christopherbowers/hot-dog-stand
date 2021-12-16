@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
-import { Route, Switch, Redirect, useHistory } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import Home from './pages/Home';
 import Header from './components/Header';
 import Game from './pages/Game';
@@ -55,10 +55,8 @@ const App = () => {
         price: inputValue.price,
         quantity: parseInt(inputValue.quantity) + mains[0].quantity
       })
-      .then((response) => {
-        setMains(response.data.price);
-        setMains(response.data.quantity);
-        // return <Redirect to="/game/check-inventory" />;
+      .then(() => {
+        getMains()
         history.push('/game/check-inventory');
       });
   };
@@ -70,9 +68,8 @@ const App = () => {
         price: inputValue.price,
         quantity: parseInt(inputValue.quantity) + mains[1].quantity
       })
-      .then((response) => {
-        setMains(response.data.price);
-        setMains(response.data.quantity);
+      .then(() => {
+        getMains()
       });
   };
 
@@ -83,9 +80,8 @@ const App = () => {
         price: inputValue.price,
         quantity: parseInt(inputValue.quantity) + mains[2].quantity
       })
-      .then((response) => {
-        setMains(response.data.price);
-        setMains(response.data.quantity);
+      .then(() => {
+        getMains()
       });
   };
 
